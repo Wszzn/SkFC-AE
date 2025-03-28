@@ -197,8 +197,7 @@ class FocusedLinearAttention(nn.Module):
                              groups=head_dim, padding=kernel_size // 2)
         self.scale = nn.Parameter(torch.zeros(size=(1, 1, dim)))
         self.positional_encoding = nn.Parameter(torch.zeros(size=(1, window_size[0] * window_size[1], dim)))
-        print('Linear Attention window{} f{} kernel{}'.
-              format(window_size, focusing_factor, kernel_size))
+
 
     def forward(self, x, mask=None):
         """
